@@ -1,0 +1,24 @@
+@import './app/variables';
+
+.header {
+  width: 100%;
+  line-height: 150px;
+  background: $headerColor;
+  color: $fontColor;
+}
+
+.chuck-title {
+  vertical-align: middle;
+  text-align: center;
+  font-family: $headerFont;
+  font-size: 48px;
+}
+
+.settings-btn {
+  float: right;
+  width: 55px;
+  height: 55px;
+  margin: 15px 15px 0 0;
+  border: none;
+  border-radius: 50px;
+}
