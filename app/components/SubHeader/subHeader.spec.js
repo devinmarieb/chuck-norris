@@ -25,5 +25,4 @@ describe('<SubHeader />', function() {
     expect(wrapper.find('Input')).to.have.length(1)
   })
 
-
 })
