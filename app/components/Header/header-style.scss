@@ -3,6 +3,7 @@
 .header {
   width: 100%;
   line-height: 150px;
+  margin-bottom: $bottomSpacing;
   background: $headerColor;
   color: $fontColor;
 }
@@ -21,4 +22,9 @@
   margin: 15px 15px 0 0;
   border: none;
   border-radius: 50px;
+  background-color: $buttonColor;
+}
+
+.settings-btn:hover {
+  background-color: $buttonHover;
 }

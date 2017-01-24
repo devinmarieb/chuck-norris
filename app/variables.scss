@@ -1,5 +1,15 @@
 $bodyColor: rgb(29, 53, 63);
 $headerColor: rgba(255, 255, 255, 0.3);
 $fontColor: #FFFFFF;
+$buttonColor: rgb(192, 192, 192);
+$buttonHover: rgb(255, 255, 255);
+
 $headerFont: 'Bungee Shade';
 $bodyFont: 'Karla', sans-serif;
+
+$bottomSpacing: 20px;
+
+@mixin borderStyles {
+  border: none;
+  border-radius: 5px;
+}
