@@ -1,16 +1,15 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 
-export default class Input extends Component {
-  constructor() {
-    super();
-    this.state = {
-      input: 0
-    }
-  }
-  render(){
+const Input = (props)=> {
     return(
-      <input className={ this.props.className } type={ this.props.type } placeholder='#' />
+      <input className={ props.className }
+             type={ props.type }
+             placeholder='#'
+             value= { props.value }
+             onChange={ props.onChange } />
     )
-  }
 }
+
+
+export default Input;
