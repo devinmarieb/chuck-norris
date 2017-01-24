@@ -24,6 +24,10 @@ export default class SubHeader extends Component {
     })
   }
 
+  setFavorite() {
+    console.log('add favorite');
+  }
+
   getFavorites() {
     console.log('favorites will go here');
   }
@@ -37,7 +41,10 @@ export default class SubHeader extends Component {
           <Input className='jokes-input' type='number' value= { this.state.input } onChange={ (e)=> {this.setState({ input: e.target.value })} }/>
         </div>
         <Button className='favorites-btn' title='Favorites' handleClick={ ()=> this.getFavorites() } />
-        <p> { this.state.jokeArray } </p>
+        <div className='joke-container'>
+          <p className='joke'> { this.state.jokeArray } </p>
+          <Button className='star-btn' title='star' handleClick={ ()=> this.setFavorite() } />
+        </div>
       </div>
     )
   }
