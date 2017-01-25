@@ -1,0 +1,25 @@
+@import './app/variables';
+
+// .joke-container {
+//
+// }
+
+.joke {
+  display: inline-block;
+  margin: 10px;
+  width: 300px;
+  line-height: 100%;
+  padding: 10px;
+  background-color: $jokeBackground;
+  text-align: center;
+  font-family: $bodyFont;
+  color: $fontColor;
+}
+
+.favorites-btn {
+  @include borderStyles;
+  margin: 0 auto 30px auto;
+  width: 120px;
+  height: 45px;
+  display: block;
+}

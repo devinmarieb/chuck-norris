@@ -3,7 +3,7 @@ import React from 'react'
 
 const ClickForJokes = ()=> {
   return(
-    <p className='click-new-jokes'> Click New Jokes! </p>
+    <p className='click-new-jokes'> Click Get Jokes! </p>
   )
 }
 

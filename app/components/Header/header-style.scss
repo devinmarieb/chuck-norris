@@ -47,14 +47,6 @@
   font-size: 18px;
 }
 
-.new-joke-section {
-  display: block;
-  margin-bottom: $bottomSpacing;
-  line-height: 60px;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
 .new-jokes-btn {
   @include borderStyles;
   vertical-align: middle;
@@ -71,14 +63,6 @@
   font-size: 24px;
 }
 
-.favorites-btn {
-  @include borderStyles;
-  margin: 0 auto 30px auto;
-  width: 120px;
-  height: 45px;
-  display: block;
-}
-
 .new-jokes-btn:hover, .favorites-btn:hover {
   background-color: $buttonHover;
 }
@@ -89,16 +73,12 @@
   color: $headerColor;
 }
 
-.joke-container {
-  visibility: hidden;
-  width: 300px;
-  height: inherit;
-  line-height: 100%;
-  padding: 10px;
-  background-color: $jokeBackground;
+.new-joke-section {
+  display: block;
+  margin-bottom: $bottomSpacing;
+  line-height: 60px;
+  margin-bottom: 20px;
   text-align: center;
-  font-family: $bodyFont;
-  color: $fontColor;
 }
 
 .joke {
