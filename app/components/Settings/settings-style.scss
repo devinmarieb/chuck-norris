@@ -1,0 +1,38 @@
+@import './app/variables';
+
+.settings {
+  padding: 20px 0;
+  background-color: $jokeBackground;
+}
+
+.set-name {
+  display: inline-block;
+  font-family: $bodyFont;
+  color: $fontColor;
+}
+
+.name-input {
+  margin: 5px 10px;
+  border: none;
+  width: 200px;
+  height: 28px;
+  font-size: 18px;
+}
+
+.set, .reset {
+  @include borderStyles;
+  width: 50px;
+  height: 30px;
+  margin: 5px;
+}
+
+.parental-controls {
+  display: inline-block;
+  margin-top: 10px;
+  font-family: $bodyFont;
+  color: $fontColor;
+}
+
+.checkbox {
+  margin: 5px 10px;
+}

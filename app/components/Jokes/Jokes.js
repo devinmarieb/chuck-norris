@@ -4,12 +4,12 @@ import './jokes-style'
 
 
 const Jokes = (props)=> {
-  // console.log(props.jokes);
+
   let jokesList = props.jokes.map((joke, i) => {
     return (
       <article key={i} className='joke'>
         <p> { joke.joke } </p>
-        <Button title='star'/>
+        <Button title='star' handleClick={ ()=> addToFavorites() }/>
       </article>
     )
   })

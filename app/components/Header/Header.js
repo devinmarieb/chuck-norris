@@ -14,6 +14,8 @@ export default class Header extends Component {
       input: 5,
       randomJoke: '',
       jokeList: [],
+      firstName: 'Chuck',
+      lastName: 'Norris'
     }
   }
 
@@ -27,12 +29,18 @@ export default class Header extends Component {
   }
 
   getNewJoke(input) {
-    let jokeRequest = new Request(`http://api.icndb.com/jokes/random/${input}/?escape=javascript`)
+    let jokeRequest = new Request(`http://api.icndb.com/jokes/random/${input}/?escape=javascript&firstName=${this.state.firstName}&$lastName=${this.state.lastName}`)
+    console.log(jokeRequest);
     fetch(jokeRequest).then((response)=> {
       return response.json();
     }).then((inputData)=> {
       this.setState({ jokeList: inputData.value })
     })
+  }
+
+  updateName(e) {
+    this.setState({ firstName: e.target.value })
+    this.setState({ lastName: e.target.value })
   }
 
   render(){
@@ -45,18 +53,11 @@ export default class Header extends Component {
           <Link to='/jokes'>
             <Button className='new-jokes-btn' title='Get Jokes' handleClick={ ()=> this.getNewJoke(this.state.input) } />
           </Link>
-          <Input className='jokes-input' type='number' value={ this.state.input } onChange={ (e)=> {this.setState({ input: e.target.value })} }/>
+          <Input className='jokes-input' type='number' placeholder='#' value={ this.state.input } onChange={ (e)=> {this.setState({ input: e.target.value })} }/>
         </article>
         <Button className='favorites-btn' title='Favorites' handleClick={ ()=> this.getFavorites() } />
-        { React.cloneElement(this.props.children, { jokes: this.state.jokeList }) }
+        { React.cloneElement(this.props.children, { jokes: this.state.jokeList, updateName: this.updateName.bind(this) }) }
       </section>
     )
   }
 }
-
-
-
-{/* <article className='header'>
-  <Button className='settings-btn' title='Settings' handleClick={ ()=> console.log('hi') }/>
-  <h1 className='chuck-title'> Chuck Norris Joke Machine </h1>
-</article> */}
