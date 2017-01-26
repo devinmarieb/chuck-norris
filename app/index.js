@@ -5,6 +5,8 @@ import Header from './components/Header/Header'
 import ClickForJokes from './components/ClickForJokes/ClickForJokes'
 import Jokes from './components/Jokes/Jokes'
 import Settings from './components/Settings/Settings'
+import Favorites from './components/Favorites/Favorites'
+
 import './reset.css'
 import './styles'
 
@@ -18,6 +20,9 @@ const router = (
       </Route>
       <Route path='/settings'>
         <IndexRoute component={ Settings } />
+      </Route>
+      <Route path='/favorites' component={ Favorites }>
+        <IndexRoute component={ Favorites } />
       </Route>
     </Route>
   </Router>

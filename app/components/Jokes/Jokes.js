@@ -5,16 +5,16 @@ import './jokes-style'
 
 const Jokes = (props)=> {
 
-  const updateArray = ()=> {
-    props.favoritesList.push(1)
-    console.log(Object.keys(props.jokes))
+  const updateArray = (joke)=> {
+    props.favoritesList.push(joke.joke)
+    console.log(props.favoritesList)
   }
 
   let jokesList = props.jokes.map((joke, i) => {
     return (
-      <article key={i} className='joke'>
+      <article key={ joke.id } className='joke'>
         <p> { joke.joke } </p>
-        <Button title='star' handleClick={ ()=> updateArray() }/>
+        <Button className='star-btn' title='star' handleClick={ ()=> updateArray(joke) }/>
       </article>
     )
   })

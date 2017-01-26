@@ -85,7 +85,10 @@
   margin-bottom: 7px;
 }
 
-.star-btn {
-  visibility: hidden;
-  width: 50px;
+.favorites-btn {
+  @include borderStyles;
+  margin: 0 auto 30px auto;
+  width: 120px;
+  height: 45px;
+  display: block;
 }

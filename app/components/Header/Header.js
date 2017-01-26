@@ -53,10 +53,9 @@ export default class Header extends Component {
     this.setState({ explicit: 'exclude=[explicit]' })
   }
 
-  // updateFavorites() {
-  //   this.state.favoritesList.push(1)
-  //   console.log(this.state.favoritesList);
-  // }
+  getFavorites() {
+    console.log(this.state.favoritesList);
+  }
 
   render(){
 
@@ -70,13 +69,17 @@ export default class Header extends Component {
           </Link>
           <Input className='jokes-input' type='number' placeholder='#' value={ this.state.input } onChange={ (e)=> {this.setState({ input: e.target.value })} }/>
         </article>
-        <Button className='favorites-btn' title='Favorites' handleClick={ ()=> this.getFavorites() } />
+        <Link to='/favorites'>
+          <Button className='favorites-btn' title='Favorites' handleClick={ ()=> this.getFavorites() } />
+        </Link>
+
         { React.cloneElement(this.props.children,
                             { jokes: this.state.jokeList,
                               updateName: this.updateName.bind(this),
                               updateParental: this.updateParental.bind(this),
                               resetControls: this.resetControls.bind(this),
                               favoritesList: this.state.favoritesList }) }
+
       </section>
     )
   }
