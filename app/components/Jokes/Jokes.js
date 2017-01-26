@@ -14,7 +14,7 @@ const Jokes = (props)=> {
     return (
       <article key={i} className='joke'>
         <p> { joke.joke } </p>
-        <Button title='star' handleClick={ ()=> updateArray(joke.joke) }/>
+        <Button title='star' handleClick={ ()=> updateArray() }/>
       </article>
     )
   })

@@ -30,8 +30,8 @@ export default class Header extends Component {
     })
   }
 
-  getNewJoke(input) {
-    let jokeRequest = new Request(`http://api.icndb.com/jokes/random/${input}/?escape=javascript&firstName=${this.state.firstName}&lastName=${this.state.lastName}&${this.state.explicit}`)
+  getNewJoke() {
+    let jokeRequest = new Request(`http://api.icndb.com/jokes/random/${this.state.input}/?escape=javascript&firstName=${this.state.firstName}&lastName=${this.state.lastName}&${this.state.explicit}`)
     console.log(jokeRequest);
     fetch(jokeRequest).then((response)=> {
       return response.json();
@@ -66,7 +66,7 @@ export default class Header extends Component {
         <h1 className='chuck-quote'> {this.state.randomJoke} </h1>
         <article className='new-joke-section'>
           <Link to='/jokes'>
-            <Button className='new-jokes-btn' title='Get Jokes' handleClick={ ()=> this.getNewJoke(this.state.input) } />
+            <Button className='new-jokes-btn' title='Get Jokes' handleClick={ ()=> this.getNewJoke() } />
           </Link>
           <Input className='jokes-input' type='number' placeholder='#' value={ this.state.input } onChange={ (e)=> {this.setState({ input: e.target.value })} }/>
         </article>
