@@ -14,8 +14,10 @@ export default class Header extends Component {
       input: 5,
       randomJoke: '',
       jokeList: [],
+      favoritesList: [],
       firstName: 'Chuck',
-      lastName: 'Norris'
+      lastName: 'Norris',
+      explicit: '',
     }
   }
 
@@ -29,7 +31,7 @@ export default class Header extends Component {
   }
 
   getNewJoke(input) {
-    let jokeRequest = new Request(`http://api.icndb.com/jokes/random/${input}/?escape=javascript&firstName=${this.state.firstName}&$lastName=${this.state.lastName}`)
+    let jokeRequest = new Request(`http://api.icndb.com/jokes/random/${input}/?escape=javascript&firstName=${this.state.firstName}&lastName=${this.state.lastName}&${this.state.explicit}`)
     console.log(jokeRequest);
     fetch(jokeRequest).then((response)=> {
       return response.json();
@@ -39,9 +41,22 @@ export default class Header extends Component {
   }
 
   updateName(e) {
-    this.setState({ firstName: e.target.value })
-    this.setState({ lastName: e.target.value })
+    let fullName = e.target.value.split(' ')
+    this.setState({ firstName: fullName[0], lastName: fullName[1] })
   }
+
+  resetControls() {
+    this.setState({ firstName: 'Chuck', lastName: 'Norris', explicit: '' })
+  }
+
+  updateParental() {
+    this.setState({ explicit: 'exclude=[explicit]' })
+  }
+
+  // updateFavorites() {
+  //   this.state.favoritesList.push(1)
+  //   console.log(this.state.favoritesList);
+  // }
 
   render(){
 
@@ -56,7 +71,12 @@ export default class Header extends Component {
           <Input className='jokes-input' type='number' placeholder='#' value={ this.state.input } onChange={ (e)=> {this.setState({ input: e.target.value })} }/>
         </article>
         <Button className='favorites-btn' title='Favorites' handleClick={ ()=> this.getFavorites() } />
-        { React.cloneElement(this.props.children, { jokes: this.state.jokeList, updateName: this.updateName.bind(this) }) }
+        { React.cloneElement(this.props.children,
+                            { jokes: this.state.jokeList,
+                              updateName: this.updateName.bind(this),
+                              updateParental: this.updateParental.bind(this),
+                              resetControls: this.resetControls.bind(this),
+                              favoritesList: this.state.favoritesList }) }
       </section>
     )
   }

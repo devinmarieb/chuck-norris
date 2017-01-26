@@ -19,11 +19,20 @@
   font-size: 18px;
 }
 
-.set, .reset {
+.set {
   @include borderStyles;
   width: 50px;
   height: 30px;
   margin: 5px;
+}
+
+.reset {
+  @include borderStyles;
+  display: block;
+  width: 400px;
+  height: 50px;
+  margin: 10px auto;
+  font-size: 18px;
 }
 
 .parental-controls {
@@ -33,6 +42,13 @@
   color: $fontColor;
 }
 
-.checkbox {
-  margin: 5px 10px;
+.control-btn {
+  @include borderStyles;
+  width: 50px;
+  height: 30px;
+  margin: 5px;
+}
+
+.control-btn:hover {
+  background-color: $buttonHover;
 }

@@ -6,19 +6,20 @@ import './settings-style'
 
 
 const Settings = (props)=> {
-  console.log(props.name);
+
   return(
     <section className='settings'>
       <p className='set-name'> Set Name: </p>
       <Input className='name-input' placeholder='name' value={ props.name } onChange={ props.updateName } />
-      <Button className='set' title='SET' handleClick={ ()=> console.log('no') }  />
-      <Button className='reset' title='RESET' />
+      {/* <Button className='set' title='SET' onChange={ props.updateName } /> */}
       <article>
         <p className='parental-controls'> Parental Controls: </p>
-        <Input className='checkbox' type='checkbox' />
+        <Button className='control-btn' title='YES' handleClick={ props.updateParental }   />
+        <Button className='reset' title='RESET Name and Parental Controls' handleClick={ props.resetControls } />
       </article>
     </section>
   )
+
 }
 
 
