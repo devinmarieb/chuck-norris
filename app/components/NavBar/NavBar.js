@@ -17,5 +17,11 @@ const NavBar = (props)=> {
 
 }
 
+NavBar.propTypes = {
+  getNewJoke: React.PropTypes.func,
+  defaultJokes: React.PropTypes.string,
+  updateInput: React.PropTypes.func
+}
+
 
 export default NavBar;

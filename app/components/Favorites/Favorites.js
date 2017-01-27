@@ -29,5 +29,9 @@ const Favorites = (props)=> {
 
 }
 
+Favorites.propTypes = {
+  favoritesList: React.PropTypes.string,
+}
+
 
 export default Favorites;

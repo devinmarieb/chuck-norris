@@ -13,13 +13,12 @@ const SubHeader = (props)=> {
         <Button className='settings-btn' title='Settings' />
       </Link> :
       <Link to='/jokes'>
-        <Button className='settings-btn' title='Jokes' onClick={ props.hideAll } />
+        <Button className='settings-btn' title='Jokes' />
       </Link> }
       <h1 className='chuck-title'> Chuck Norris Joke Machine </h1>
     </article>
   )
 
 }
-
 
 export default SubHeader;

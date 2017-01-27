@@ -1,14 +1,13 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { Router, Route, Link, IndexRoute, browserHistory } from 'react-router'
-import Header from './components/Header/Header'
 import SubHeader from './components/SubHeader/SubHeader'
+import Header from './components/Header/Header'
 import ClickForJokes from './components/ClickForJokes/ClickForJokes'
 import Jokes from './components/Jokes/Jokes'
 import Settings from './components/Settings/Settings'
 import Favorites from './components/Favorites/Favorites'
 import NavBar from './components/NavBar/NavBar'
-
 
 import './reset.css'
 import './styles'

@@ -23,5 +23,12 @@ const Settings = (props)=> {
 
 }
 
+Settings.propTypes = {
+  value: React.PropTypes.string,
+  updateName: React.PropTypes.func,
+  resetControls: React.PropTypes.func,
+  toggleParental: React.PropTypes.func
+}
+
 
 export default Settings;

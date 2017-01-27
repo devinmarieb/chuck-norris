@@ -28,5 +28,11 @@ const Jokes = (props)=> {
 
 }
 
+Jokes.propTypes = {
+  favoritesList: React.PropTypes.array,
+  jokes: React.PropTypes.array
+}
+
+
 
 export default Jokes;
