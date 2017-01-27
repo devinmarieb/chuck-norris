@@ -1,9 +1,8 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { Router, Route, Link, IndexRoute, browserHistory } from 'react-router'
+import { Router, Route, Link, IndexRoute, browserHistory, IndexRedirect } from 'react-router'
 import SubHeader from './components/SubHeader/SubHeader'
 import Header from './components/Header/Header'
-import ClickForJokes from './components/ClickForJokes/ClickForJokes'
 import Jokes from './components/Jokes/Jokes'
 import Settings from './components/Settings/Settings'
 import Favorites from './components/Favorites/Favorites'
@@ -16,7 +15,7 @@ import './styles'
 const router = (
   <Router history={ browserHistory }>
     <Route path='/' component={ Header }>
-      <IndexRoute component={ ClickForJokes} />
+      <IndexRedirect to='/jokes' />
       <Route path='/jokes' component={ Jokes }/>
       <Route path='/settings' component={ Settings } />
       <Route path='/favorites' component={ Favorites } />
