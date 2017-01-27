@@ -59,12 +59,12 @@ export default class Header extends Component {
     this.setState({ firstName: 'Chuck', lastName: 'Norris', explicit: '' })
   }
 
-  toggleParental(e) {
+  toggleParental() {
     if(this.state.explicit === '' ) {
       this.setState({ explicit: 'limitTo=[explicit]' })
     } else {
-    this.setState({ explicit: '' })
-      }
+      this.setState({ explicit: '' })
+    }
   }
 
   render(){
@@ -75,9 +75,6 @@ export default class Header extends Component {
         {window.location.pathname === '/jokes' ?
           <NavBar getNewJoke={ this.getNewJoke.bind(this) } updateInput={ this.updateInput.bind(this) } defaultJokes={ this.state.input } />
           : <div/> }
-        {/* {window.location.pathname !== '/settings' ?
-          <Link to='/favorites'><Button className='favorites-btn' title='Favorites' /></Link>
-          : <div/> } */}
           {window.location.pathname === '/favorites' ?
             <Link to='/jokes'><Button className='favorites-btn' title='Jokes' /></Link>
             : <Link to='/favorites'><Button className='favorites-btn' title='Favorites' /></Link> }
