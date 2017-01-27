@@ -40,6 +40,12 @@ export default class Header extends Component {
     })
   }
 
+  showText() {
+    if(this.state.jokeList.length === 0 && window.location.pathname === '/jokes') {
+      return (<p className='no-favorites'> Enter the number of jokes you want and then click Get Jokes! </p>)
+    }
+  }
+
   updateName(e) {
     let fullName = e.target.value.split(' ')
     this.setState({ firstName: fullName[0], lastName: fullName[1] })
@@ -55,25 +61,10 @@ export default class Header extends Component {
 
   toggleParental(e) {
     if(this.state.explicit === '' ) {
-      e.target.classList.toggle('star-clicked');
       this.setState({ explicit: 'limitTo=[explicit]' })
     } else {
     this.setState({ explicit: '' })
       }
-  }
-
-  hideUserInputs() {
-    if(this.state.favoritesList.length > 0) {
-    document.querySelector('.new-joke-section').classList.toggle('hide')
-    document.querySelector('.favorites-btn').title='Jokes'
-  } else {
-    document.querySelector('.new-joke-section').style.display='block'
-    }
-  }
-
-  hideAll() {
-    document.querySelector('.new-joke-section').classList.toggle('hide')
-    document.querySelector('.favorites-btn').classList.toggle('hide')
   }
 
   render(){
@@ -81,24 +72,22 @@ export default class Header extends Component {
       <section className='sub-container'>
         <SubHeader />
         <h1 className='chuck-quote'> {this.state.randomJoke} </h1>
-        <NavBar getNewJoke={ this.getNewJoke.bind(this) } updateInput={ this.updateInput.bind(this) } defaultJokes={ this.state.input } />
-        {/* <article className='new-joke-section'>
-          <Link to='/jokes'>
-            <Button className='new-jokes-btn' title='Get Jokes' handleClick={ ()=> this.getNewJoke() } link='jokes'/>
-          </Link>
-          <Input className='jokes-input' type='number' placeholder='#' value={ this.state.input } onChange={ (e)=> {this.setState({ input: e.target.value })} }/>
-        </article> */}
-        <Link to='/favorites'>
-          <Button className='favorites-btn' title='Favorites' handleClick={ ()=> this.hideUserInputs() } />
-        </Link>
-
+        {window.location.pathname === '/jokes' ?
+          <NavBar getNewJoke={ this.getNewJoke.bind(this) } updateInput={ this.updateInput.bind(this) } defaultJokes={ this.state.input } />
+          : <div/> }
+        {/* {window.location.pathname !== '/settings' ?
+          <Link to='/favorites'><Button className='favorites-btn' title='Favorites' /></Link>
+          : <div/> } */}
+          {window.location.pathname === '/favorites' ?
+            <Link to='/jokes'><Button className='favorites-btn' title='Jokes' /></Link>
+            : <Link to='/favorites'><Button className='favorites-btn' title='Favorites' /></Link> }
+        { this.showText() }
         { React.cloneElement(this.props.children,
                             { jokes: this.state.jokeList,
                               updateName: this.updateName.bind(this),
                               resetControls: this.resetControls.bind(this),
                               toggleParental: this.toggleParental.bind(this),
                               favoritesList: this.state.favoritesList,
-                              hideAll: this.hideAll.bind(this),
                               input: this.state.input }) }
 
       </section>

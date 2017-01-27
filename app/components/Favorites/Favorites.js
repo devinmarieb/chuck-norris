@@ -1,16 +1,10 @@
 import React, { Component } from 'react'
-import Button from '../Button/Button'
+// import Button from '../Button/Button'
 
 import './favorites-style'
 
 
 const Favorites = (props)=> {
-
-//WIP UNFAVORITE//
-  // const updateArray = (joke, e)=> {
-  //   e.target.classList.toggle('fav-clicked');
-  //   e.target.setAttribute('disabled', 'disabled')
-  // }
 
   const hideText = ()=> {
     if(props.favoritesList.length === 0) {
@@ -22,7 +16,6 @@ const Favorites = (props)=> {
     return (
       <article key={ i } className='favorite'>
         <p> { joke } </p>
-        {/* <Button className='fav-btn' title='&#9733;' handleClick={ (e)=> updateArray(joke, e) } /> */}
       </article>
     )
   })

@@ -10,8 +10,7 @@ import Input from '../Input/Input'
 
 
 describe('<Header />', function() {
-
-  it('should display one h1 tags', function() {
+  it.skip('should display one h1 tags', function() {
     const wrapper = mount(<Header />)
     expect(wrapper.find('h1')).to.have.length(1)
   })

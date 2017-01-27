@@ -18,15 +18,9 @@ const router = (
   <Router history={ browserHistory }>
     <Route path='/' component={ Header }>
       <IndexRoute component={ ClickForJokes} />
-      <Route path='/jokes' component={ Jokes }>
-        <IndexRoute component={ Jokes } />
-      </Route>
-      <Route path='/settings'>
-        <IndexRoute component={ Settings } />
-      </Route>
-      <Route path='/favorites' component={ Favorites }>
-        <IndexRoute component={ ClickForJokes } />
-      </Route>
+      <Route path='/jokes' component={ Jokes }/>
+      <Route path='/settings' component={ Settings } />
+      <Route path='/favorites' component={ Favorites } />
     </Route>
   </Router>
 )

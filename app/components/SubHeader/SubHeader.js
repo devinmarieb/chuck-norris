@@ -8,9 +8,13 @@ const SubHeader = (props)=> {
 
   return(
     <article className='header'>
+      {window.location.pathname !== '/settings' ?
       <Link to='/settings'>
-        <Button className='settings-btn' title='Settings' onClick={ props.hideAll } />
-      </Link>
+        <Button className='settings-btn' title='Settings' />
+      </Link> :
+      <Link to='/jokes'>
+        <Button className='settings-btn' title='Jokes' onClick={ props.hideAll } />
+      </Link> }
       <h1 className='chuck-title'> Chuck Norris Joke Machine </h1>
     </article>
   )
