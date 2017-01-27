@@ -1,50 +1,25 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router'
+// import Settings from '../Settings/Settings'
 import Button from '../Button/Button'
-import Input from '../Input/Input'
-import './subHeader-style'
 
 
-export default class SubHeader extends Component {
-  constructor() {
-    super();
-    this.state = {
-      input: '',
-      randomJoke: ''
-    }
-  }
+const SubHeader = (props)=> {
 
-  getNewJoke() {
-    let jokeRequest = new Request('http://api.icndb.com/jokes/random')
-    fetch(jokeRequest).then((response)=> {
-      return response.json();
-    }).then((response)=> {
-      console.log(response.value.joke);
-      this.setState({ randomJoke: response.value.joke })
-    })
-  }
+  return(
+    <article className='header'>
+      {window.location.pathname !== '/settings' ?
+      <Link to='/settings'>
+        <Button className='settings-btn' title='Settings' />
+      </Link> :
+      <Link to='/jokes'>
+        <Button className='settings-btn' title='Jokes' onClick={ props.hideAll } />
+      </Link> }
+      <h1 className='chuck-title'> Chuck Norris Joke Machine </h1>
+    </article>
+  )
 
-  setFavorite() {
-    console.log('add favorite');
-  }
-
-  getFavorites() {
-    console.log('favorites will go here');
-  }
-
-  render(){
-    return (
-      <div className='sub-container'>
-        <h1 className='chuck-quote'> {this.state.randomJoke} </h1>
-        <div className='new-joke-section'>
-          <Button className='new-jokes-btn' title='New Jokes' handleClick={ ()=> this.getNewJoke() } />
-          <Input className='jokes-input' type='number' value={ this.state.input } onChange={ (e)=> {this.setState({ input: e.target.value })} }/>
-        </div>
-        <Button className='favorites-btn' title='Favorites' handleClick={ ()=> this.getFavorites() } />
-        <div className='joke-container'>
-          <p className='joke'> { this.state.randomJoke } </p>
-          <Button className='star-btn' title='star' handleClick={ ()=> this.setFavorite() } />
-        </div>
-      </div>
-    )
-  }
 }
+
+
+export default SubHeader;

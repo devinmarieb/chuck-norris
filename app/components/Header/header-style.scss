@@ -28,3 +28,77 @@
 .settings-btn:hover {
   background-color: $buttonHover;
 }
+
+.sub-container {
+  margin: 0 40px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.chuck-quote {
+  margin-bottom: $bottomSpacing;
+  padding: 20px 5px;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 100%;
+  border-radius: 5px;
+  border: 1px dotted $fontColor;
+  font-family: $bodyFont;
+  font-size: 20px;
+  color: $fontColor;
+}
+
+.new-jokes-btn {
+  @include borderStyles;
+  vertical-align: middle;
+  width: 200px;
+  height: 60px;
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.jokes-input {
+  @include borderStyles;
+  vertical-align: middle;
+  width: 50px;
+  height: 58px;
+  font-size: 24px;
+}
+
+.new-jokes-btn:hover, .favorites-btn:hover {
+  background-color: $buttonHover;
+}
+
+.new-joke-section {
+  display: block;
+  margin-bottom: $bottomSpacing;
+  line-height: 60px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.click-new-jokes {
+  font-family: $bodyFont;
+  font-size: 24px;
+  color: $headerColor;
+}
+
+.joke {
+  margin-bottom: 7px;
+}
+
+.favorites-btn {
+  @include borderStyles;
+  margin: 0 auto 30px auto;
+  width: 120px;
+  height: 45px;
+  font-size: 18px;
+}
+
+.new-jokes-btn:focus, .favorites-btn:focus, .settings-btn:focus {
+  outline: none;
+}
+
+.hide {
+  display: none;
+}

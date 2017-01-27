@@ -1,0 +1,65 @@
+@import './app/variables';
+
+.settings {
+  padding: 20px 0;
+  background-color: $jokeBackground;
+}
+
+.name {
+  display: inline-block;
+  font-family: $bodyFont;
+  font-size: 18px;
+  color: $fontColor;
+}
+
+.name-input {
+  margin: 5px 10px;
+  border: none;
+  width: 200px;
+  height: 28px;
+  font-size: 18px;
+}
+
+.set {
+  @include borderStyles;
+  width: 50px;
+  height: 30px;
+  margin: 5px;
+}
+
+.reset-btn {
+  @include borderStyles;
+  width: 150px;
+  height: 30px;
+  margin: 10px 10px;
+}
+
+.set-name {
+  @include borderStyles;
+  width: 70px;
+  height: 30px;
+  margin: 10px 10px;
+}
+
+.parental-controls {
+  display: inline-block;
+  margin: 10px 20px 0 0;
+  font-family: $bodyFont;
+  font-size: 24px;
+  color: $fontColor;
+}
+
+.control-btn {
+  @include borderStyles;
+  width: 50px;
+  height: 30px;
+  margin: 10px;
+}
+
+.control-btn:hover, .reset-btn:hover, .set-name:hover {
+  background-color: $buttonHover;
+}
+
+.control-btn:focus, .reset:focus {
+  outline: none;
+}

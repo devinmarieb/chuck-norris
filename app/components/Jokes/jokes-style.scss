@@ -1,0 +1,42 @@
+@import './app/variables';
+
+.joke-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.joke {
+  display: inline-block;
+  margin: 10px;
+  width: 300px;
+  height: 150px;
+  line-height: 100%;
+  padding: 10px;
+  background-color: $jokeBackground;
+  text-align: center;
+  font-family: $bodyFont;
+  color: $fontColor;
+  border: 1px dotted white;
+}
+
+
+.star-btn {
+  @include borderStyles;
+  margin-left: 90%;
+  font-size: 30px;
+  color: $fontColor;
+  background-color: transparent;
+}
+
+.star-btn:hover {
+  color: $favoriteHover;
+}
+
+.star-btn:focus {
+  outline: none;
+}
+
+.star-clicked {
+  color: $favoriteHover;
+}
