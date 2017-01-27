@@ -3,7 +3,7 @@ import { mount, shallow } from 'enzyme'
 import { expect, assert } from 'chai'
 import sinon from 'sinon'
 
-import Input from './Input'
+import Input, { onChange } from './Input'
 
 
 describe('<Input />', ()=> {

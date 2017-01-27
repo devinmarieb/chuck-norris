@@ -10,7 +10,7 @@ const Settings = (props)=> {
   return(
     <section className='settings'>
       <p className='name'> Set Name: </p>
-      <Input className='name-input' placeholder='name' value={ props.name } onChange={ props.updateName } />
+      <Input className='name-input' type='text' placeholder='name' value={ props.name } onChange={ props.updateName } />
       <Button className='set-name' title='Set Name' handleClick={ ()=> console.log('this button is useless') } />
       <Button className='reset-btn' title='Reset To Chuck Norris' handleClick={ props.resetControls } />
       <article>

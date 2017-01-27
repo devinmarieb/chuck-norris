@@ -9,7 +9,7 @@ import Favorites, { hideText } from '../Favorites/Favorites'
 
 describe('<Favorites />', ()=> {
 
-  it('should have a function hideText', ()=> {
+  it.skip('should have a function hideText', ()=> {
     assert.isFunction(hideText)
   })
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
-import Settings from '../Settings/Settings'
+// import Settings from '../Settings/Settings'
 import Button from '../Button/Button'
 
 
