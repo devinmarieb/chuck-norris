@@ -43,8 +43,9 @@
   line-height: 100%;
   border-radius: 5px;
   border: 1px dotted $fontColor;
+  font-family: $bodyFont;
+  font-size: 20px;
   color: $fontColor;
-  font-size: 18px;
 }
 
 .new-jokes-btn {
@@ -53,6 +54,7 @@
   width: 200px;
   height: 60px;
   margin-right: 10px;
+  font-size: 18px;
 }
 
 .jokes-input {
@@ -67,18 +69,18 @@
   background-color: $buttonHover;
 }
 
-.click-new-jokes {
-  font-family: $bodyFont;
-  font-size: 24px;
-  color: $headerColor;
-}
-
 .new-joke-section {
   display: block;
   margin-bottom: $bottomSpacing;
   line-height: 60px;
   margin-bottom: 20px;
   text-align: center;
+}
+
+.click-new-jokes {
+  font-family: $bodyFont;
+  font-size: 24px;
+  color: $headerColor;
 }
 
 .joke {
@@ -90,5 +92,13 @@
   margin: 0 auto 30px auto;
   width: 120px;
   height: 45px;
-  display: block;
+  font-size: 18px;
+}
+
+.new-jokes-btn:focus, .favorites-btn:focus, .settings-btn:focus {
+  outline: none;
+}
+
+.hide {
+  display: none;
 }

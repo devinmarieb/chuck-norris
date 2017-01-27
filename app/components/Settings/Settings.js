@@ -9,13 +9,14 @@ const Settings = (props)=> {
 
   return(
     <section className='settings'>
-      <p className='set-name'> Set Name: </p>
+      <p className='name'> Set Name: </p>
       <Input className='name-input' placeholder='name' value={ props.name } onChange={ props.updateName } />
-      {/* <Button className='set' title='SET' onChange={ props.updateName } /> */}
+      <Button className='set-name' title='Set Name' handleClick={ ()=> console.log('this button is useless') } />
+      <Button className='reset-btn' title='Reset To Chuck Norris' handleClick={ props.resetControls } />
       <article>
-        <p className='parental-controls'> Parental Controls: </p>
-        <Button className='control-btn' title='YES' handleClick={ props.updateParental }   />
-        <Button className='reset' title='RESET Name and Parental Controls' handleClick={ props.resetControls } />
+        <p className='parental-controls'> Adult Mode: </p>
+        <Button className='control-btn' title='ON' handleClick={ props.toggleParental } />
+        <Button className='control-btn' title='OFF' handleClick={ props.toggleParental } />
       </article>
     </section>
   )

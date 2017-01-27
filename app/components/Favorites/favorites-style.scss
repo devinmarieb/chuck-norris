@@ -6,6 +6,12 @@
   justify-content: center;
 }
 
+.no-favorites {
+  font-family: $bodyFont;
+  font-size: 24px;
+  color: $headerColor;
+}
+
 .favorite {
   display: inline-block;
   margin: 10px;
@@ -16,4 +22,24 @@
   text-align: center;
   font-family: $bodyFont;
   color: $fontColor;
+}
+
+.fav-btn {
+  @include borderStyles;
+  margin-left: 90%;
+  font-size: 30px;
+  color: $fontColor;
+  background-color: transparent;
+}
+
+.fav-btn:hover {
+  color: $favoriteHover;
+}
+
+.fav-btn:focus {
+  outline: none;
+}
+
+.fav-clicked {
+  color: $favoriteHover;
 }

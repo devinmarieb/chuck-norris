@@ -5,16 +5,17 @@ import './jokes-style'
 
 const Jokes = (props)=> {
 
-  const updateArray = (joke)=> {
+  const updateArray = (joke, e)=> {
+    e.target.classList.toggle('star-clicked');
     props.favoritesList.push(joke.joke)
-    console.log(props.favoritesList)
+    e.target.setAttribute('disabled', 'disabled')
   }
 
   let jokesList = props.jokes.map((joke, i) => {
     return (
       <article key={ joke.id } className='joke'>
-        <p> { joke.joke } </p>
-        <Button className='star-btn' title='star' handleClick={ ()=> updateArray(joke) }/>
+        <p className='joke-text'> { joke.joke } </p>
+        <Button className='star-btn' title='&#9733;' handleClick={ (e)=> updateArray(joke, e) } />
       </article>
     )
   })
@@ -24,6 +25,7 @@ const Jokes = (props)=> {
       { jokesList }
     </div>
   )
+
 }
 
 
